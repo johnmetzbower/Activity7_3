@@ -40,15 +40,15 @@ namespace Activity7_3
     {
         private int _accountNumber;
 
-        public int AccountNumber;
+        public int AccountNumber
         {
             get { return _accountNumber; }
             set { _accountNumber = value; }
         }
-        public string GetAccountinfo()
+        public string GetAccountInfo()
         {
             return "Printing savings account info for account number "
              + AccountNumber.ToString();
         }
-
+    }
 }

@@ -10,7 +10,7 @@ namespace Activity7_3
     {
         static void Main(string[] args)
         {
-            List<Account> AccountList = new List<Account>();
+            List<IAccount> AccountList = new List<IAccount>();
             CheckingAccount oCheckingAccount = new CheckingAccount();
             oCheckingAccount.AccountNumber = 100;
             SavingsAccount oSavingsAccount = new SavingsAccount();
@@ -18,7 +18,7 @@ namespace Activity7_3
             AccountList.Add(oCheckingAccount);
             AccountList.Add(oSavingsAccount);
             
-            foreach (Account a in AccountList)
+            foreach (IAccount a in AccountList)
             {
                 Console.WriteLine(a.GetAccountInfo());
             }
