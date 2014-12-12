@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace Activity7_3
 {
-    public abstract class Account
+    public interface IAccount
+    {
+        string GetAccountInfo();
+       /* private int _accountNumber;
+
+        public int AccountNumber
+        {
+            get { return _accountNumber; }
+            set { _accountNumber = value; }
+        }
+
+        public abstract string GetAccountInfo();*/
+    }
+    public class CheckingAccount : IAccount
     {
         private int _accountNumber;
 
@@ -15,23 +28,27 @@ namespace Activity7_3
             get { return _accountNumber; }
             set { _accountNumber = value; }
         }
-
-        public abstract string GetAccountInfo();
-    }
-    public class CheckingAccount : Account
-    {
-        public override string GetAccountInfo()
+        
+        public string GetAccountInfo()
         {
             return "Printing checking account info for account number "
                 + AccountNumber.ToString();
         }
     }
-    public class SavingsAccount : Account
+    //all the following errors are in this last segment.
+    public class SavingsAccount : IAccount
     {
-        public override string GetAccountInfo()
+        private int _accountNumber;
+
+        public int AccountNumber;
+        {
+            get { return _accountNumber; }
+            set { _accountNumber = value; }
+        }
+        public string GetAccountinfo()
         {
             return "Printing savings account info for account number "
-                + AccountNumber.ToString();
+             + AccountNumber.ToString();
         }
-    }
+
 }
